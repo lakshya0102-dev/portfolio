@@ -21,6 +21,26 @@ body {
     color: white;
 }
 
+#weather {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+#cityInput {
+    padding: 10px;
+    width: 65%;
+}
+
+#weatherButton {
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+#weatherResult {
+    margin-top: 20px;
+}
+
 .site-header,
 main,
 .site-footer {
