@@ -25,12 +25,22 @@ async function getWeather() {
         return;
     }
 
+    if (
+        typeof CONFIG === "undefined" ||
+        !CONFIG.weatherApiKey ||
+        CONFIG.weatherApiKey === "YOUR_OPENWEATHERMAP_API_KEY"
+    ) {
+        weatherResult.textContent =
+            "Weather service is available in local demonstration only.";
+        return;
+    }
+
     weatherResult.textContent = "Loading weather...";
 
-    const apiKey = "3ec0f8a28e08c9087406fced16f56e32";
+    const apiKey = CONFIG.weatherApiKey;
 
     const url =
-  `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric`;
 
     try {
 

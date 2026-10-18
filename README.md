@@ -30,7 +30,8 @@ Only list JavaScript if it is actually used.
 
 1. Clone the repository.
 2. Open the project folder.
-3. Open `index.html` in a browser.
+3. (Optional) Copy `config.example.js` to `config.js` and add your API keys to enable weather and AI chat features locally.
+4. Open `index.html` in a browser.
 
 
 ## Current Limitations
