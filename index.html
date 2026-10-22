@@ -9,19 +9,74 @@
 </head>
 <body>
   <header class="site-header">
-    <p class="eyebrow">Personal Profile</p>
-    <h1>Lakshya Srivastava</h1>
-    <p class="tagline">Software Engineer</p>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <div class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#weather" class="nav-link">Weather &amp; AI</a>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Smart Project Finder -->
+        <div class="project-search-container" id="projectSearchContainer">
+          <div class="search-input-wrapper">
+            <svg class="search-icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input
+              type="text"
+              id="projectSearchInput"
+              class="search-input"
+              placeholder="Find a project..."
+              autocomplete="off"
+              spellcheck="false"
+              aria-label="Find a project"
+              aria-autocomplete="list"
+              aria-controls="searchResultsList"
+              aria-expanded="false"
+              role="combobox"
+            />
+            <kbd class="search-kbd-hint" id="searchKbdHint" title="Press / to search" aria-hidden="true">/</kbd>
+            <button type="button" id="searchClearBtn" class="search-clear-btn" aria-label="Clear search" hidden>&times;</button>
+          </div>
+
+          <div
+            id="searchResultsDropdown"
+            class="search-dropdown"
+            role="listbox"
+            aria-label="Project search results"
+            hidden
+          >
+            <div id="searchResultsList" class="search-results-list"></div>
+            <div id="searchDropdownFooter" class="search-dropdown-footer">
+              <span class="search-footer-hint"><kbd>↑</kbd><kbd>↓</kbd> Navigate</span>
+              <span class="search-footer-hint"><kbd>↵</kbd> Select</span>
+              <span class="search-footer-hint"><kbd>Esc</kbd> Close</span>
+            </div>
+          </div>
+        </div>
+
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle dark mode">Switch to Dark Mode</button>
+      </div>
+    </nav>
+
+    <div class="header-hero">
+      <p class="eyebrow">Personal Profile</p>
+      <h1>Lakshya Srivastava</h1>
+      <p class="tagline">AI Engineer</p>
+    </div>
   </header>
 
   <main>
     <section id="about" aria-labelledby="about-heading">
       <h2 id="about-heading">About</h2>
       <p>
-        I am a software engineer with a passion for building scalable and efficient systems. I am currently working as a software engineer at Google.
+        I'm a second-year B.Tech student specializing in Artificial Intelligence and Data Science, passionate about building intelligent applications and solving real-world problems through technology. My interests span Python development, Machine Learning, Generative AI, and Agentic AI, with a growing focus on turning ideas into practical, impactful projects.
       </p>
       <p>
-        I am also a machine learning engineer with a passion for building scalable and efficient systems. I am currently working as a machine learning engineer at Google.
+        I enjoy learning by building, exploring emerging technologies, and continuously strengthening my technical and problem-solving skills. My goal is to develop scalable AI-powered solutions, contribute to meaningful projects, and grow into an AI engineer who bridges the gap between innovative research and real-world applications.
       </p>
     </section>
 
@@ -37,25 +92,59 @@
     </section>
 
     <section id="projects" aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Projects</h2>
+      <div class="projects-section-header">
+        <h2 id="projects-heading">Projects</h2>
+        <div id="projectFilterStatus" class="project-filter-status" hidden>
+          <span id="projectFilterMsg">Showing matching projects</span>
+          <button type="button" id="clearFilterBtn" class="filter-clear-btn">Show all projects</button>
+        </div>
+      </div>
       <ul class="projects-list">
-        <li>
-          <a href="https://example.com/PLACEHOLDER-project-one">Project One Title</a>
-          <p>PLACEHOLDER Brief description of project one and what you built.</p>
+        <li id="project-resqtail" class="project-card" data-tags="Web, Frontend, APIs, JavaScript, Emergency SOS, Animal Welfare">
+          <div class="project-card-header">
+            <a href="https://github.com/Kanishka-Tripathi2007/Resqtail" target="_blank" rel="noopener noreferrer">ResQtail</a>
+          </div>
+          <p>ResQTail is a modern web-based platform dedicated to animal rescue, emergency care, adoption, feeding support, and welfare coordination. The platform connects animal lovers, rescuers, NGOs, shelters, veterinary clinics, and volunteers through a single digital ecosystem designed to provide faster response and better support for stray and injured animals.</p>
+          <p>Built using modern frontend technologies and open-source APIs, ResQTail offers features such as emergency SOS assistance, nearby rescue centre locator, first-aid guidance, donation support, adoption services, reporting system, and community-driven animal welfare resources.</p>
+          <div class="project-pills">
+            <span class="project-pill">Web</span>
+            <span class="project-pill">Frontend</span>
+            <span class="project-pill">APIs</span>
+            <span class="project-pill">JavaScript</span>
+          </div>
         </li>
-        <li>
-          <a href="https://example.com/PLACEHOLDER-project-two">PLACEHOLDER Project Two Title</a>
-          <p>PLACEHOLDER Brief description of project two and what you built.</p>
+        <li id="project-fraud-platform" class="project-card" data-tags="Python, Machine Learning, XGBoost, Fraud Detection, Feature Engineering, Risk Scoring">
+          <div class="project-card-header">
+            <a href="https://github.com/lakshya0102-dev/Real-Time-Financial-Fraud-Detection-Risk-Scoring-Platform" target="_blank" rel="noopener noreferrer">Real Time Financial Fraud Detection Risk Scoring Platform</a>
+          </div>
+          <p>An end-to-end machine learning platform that analyzes financial transactions, detects potentially fraudulent activity, and assigns risk scores to support smarter transaction decisions. It combines feature engineering, XGBoost-based fraud detection, risk scoring, and model evaluation to demonstrate a practical approach to financial fraud prevention.</p>
+          <div class="project-pills">
+            <span class="project-pill">Python</span>
+            <span class="project-pill">Machine Learning</span>
+            <span class="project-pill">XGBoost</span>
+            <span class="project-pill">Fraud Detection</span>
+          </div>
         </li>
-        <li>
-          <a href="https://example.com/PLACEHOLDER-project-three">PLACEHOLDER Project Three Title</a>
-          <p>PLACEHOLDER Brief description of project three and what you built.</p>
+        <li id="project-readinglist" class="project-card" data-tags="JavaScript, Web, HTML, CSS, Resource Management">
+          <div class="project-card-header">
+            <a href="https://github.com/lakshya0102-dev/readinglist123" target="_blank" rel="noopener noreferrer">Readinglist</a>
+          </div>
+          <p>Reading List — A web-based application to organize, manage, and keep track of your reading materials in one place, making it easier to save useful resources and stay organized throughout your learning journey.</p>
+          <div class="project-pills">
+            <span class="project-pill">JavaScript</span>
+            <span class="project-pill">Web</span>
+            <span class="project-pill">HTML/CSS</span>
+          </div>
         </li>
       </ul>
+      <div id="noProjectsFilteredMsg" class="no-projects-filtered" hidden>
+        <p>No projects match your filter.</p>
+        <button type="button" class="filter-clear-btn" id="emptyStateResetBtn">Reset filter</button>
+      </div>
     </section>
   </main>
 
-<section id="weather">
+  <section id="weather">
     <h2>Weather</h2>
 
     <input
@@ -71,44 +160,44 @@
     <div id="weatherResult">
         Enter a city to see the weather.
     </div>
-    <section id="aiChatSection" class="ai-chat">
-  <h2>Ask My AI Assistant</h2>
+  </section>
 
-  <p>
-    Ask questions about this portfolio,
-    projects, and technologies.
-  </p>
+  <section id="aiChatSection" class="ai-chat" aria-labelledby="ai-chat-heading">
+    <h2 id="ai-chat-heading">Ask My AI Assistant</h2>
 
-  <div
-    id="chatMessages"
-    aria-live="polite"
-  ></div>
+    <p>
+      Ask questions about this portfolio,
+      projects, and technologies.
+    </p>
 
-  <div class="chat-controls">
-    <input
-      type="text"
-      id="userInput"
-      placeholder="Ask a question..."
-    />
+    <div
+      id="chatMessages"
+      aria-live="polite"
+    ></div>
 
-    <button id="sendButton" type="button">
-      Send
-    </button>
-  </div>
+    <div class="chat-controls">
+      <input
+        type="text"
+        id="userInput"
+        placeholder="Ask a question..."
+      />
 
-  <p id="chatStatus" role="status"></p>
+      <button id="sendButton" type="button">
+        Send
+      </button>
+    </div>
 
-  <p class="chat-note">
-    AI chat is available during the local
-    classroom demonstration only.
-  </p>
-</section>
-</section>
+    <p id="chatStatus" role="status"></p>
+
+    <p class="chat-note">
+      AI chat is available during the local
+      classroom demonstration only.
+    </p>
+  </section>
 
   <footer class="site-footer">
-    <p>PLACEHOLDER Contact: your.email@example.com</p>
+    <p>E-Mail Id : <a href="mailto:lakshya26102007@gmail.com">lakshya26102007@gmail.com</a></p>
   </footer>
-  <button id="themeToggle">Switch to Dark Mode</button>
   <script src="config.js"></script>
   <script src="Script.js"></script>
   <script src="chatbot.js"></script>
