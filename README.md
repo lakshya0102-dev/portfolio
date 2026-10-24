@@ -1,41 +1,48 @@
-# Personal Portfolio
-A responsive portfolio website showcasing my profile, skills, projects and professional links.
+Personal Portfolio
+A responsive personal portfolio showcasing my background, technical skills, projects, and professional links.
 
-[https://your-name.vercel.app](https://vercel.com/new/lakshya26102007-1547/success?auto-redirect=true&developer-id=&external-id=&redirect-url=&branch=main&deploymentUrl=portfolio-r67494in2-lakshya26102007-1547.vercel.app&projectName=portfolio&s=https%3A%2F%2Fgithub.com%2Flakshya0102-dev%2Fportfolio&gitOrgLimit=&hasTrialAvailable=1&totalProjects=&flow-id=WAMq8jn88AyGTiccnNv4K&teamSlug=lakshya26102007-1547)
-Keep it near the top.
+Live Portfolio: portfolio-pied-nine-80.vercel.app
+GitHub Repository: lakshya0102-dev/portfolio
+Preview
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7fa4db2b-a7fa-425f-876b-0aee3c1f601b" alt="Personal portfolio homepage preview" width="613" />
+</p>
 
-<img width="613" height="420" alt="Screenshot 2026-10-09 102822" src="https://github.com/user-attachments/assets/7fa4db2b-a7fa-425f-876b-0aee3c1f601b" />
-<img width="570" height="382" alt="Screenshot 2026-10-09 102838" src="https://github.com/user-attachments/assets/67c0cc23-b6df-42ea-bb61-783bb1741bb3" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/67c0cc23-b6df-42ea-bb61-783bb1741bb3" alt="Personal portfolio additional section preview" width="570" />
+</p>
 
+Features
+- Responsive portfolio layout with sections for About, Skills, and Projects.
+- Project cards with descriptions, technology tags, and relevant links.
+- Interactive project search to find projects by name, description, or technology.
+- Light and dark theme toggle.
+- Weather widget for local demonstrations using a weather API.
+- AI-assistant interface for local demonstrations using the configured AI API.
+- Direct links to GitHub and email contact details.
+Note: The weather service and AI assistant are intended for local demonstrations and are not available as fully working API features on the deployed static site.
 
-## Tech Stack
-
-- HTML
-- CSS
-- JavaScript
-- Git
-- GitHub
-- Vercel
-Only list JavaScript if it is actually used.
-
-
-## Features
-
-- Introduces my profile and background
-- Displays my skills and projects
-- Provides direct links to my GitHub and professional profiles
-
-
-## Run Locally
-
-1. Clone the repository.
-2. Open the project folder.
-3. (Optional) Copy `config.example.js` to `config.js` and add your API keys to enable weather and AI chat features locally.
-4. Open `index.html` in a browser.
-
-
-## Current Limitations
-
-- The portfolio is a static website.
-- Project information must be updated manually.
-- It does not currently include a backend or contact form submission service.
+Tech Stack
+- Structure: HTML5
+- Styling: CSS3
+- Interactivity: JavaScript
+- Version Control: Git and GitHub
+- Deployment: Vercel
+- External APIs for local demos: OpenWeatherMap and Groq
+Run Locally
+1. Clone the repository:
+   git clone https://github.com/lakshya0102-dev/portfolio.git
+2. Open the project directory:
+   cd portfolio
+3. To try the local-demo weather and AI features, copy config.example.js to config.js and replace the placeholders with your own API keys. On Windows PowerShell, use:
+   Copy-Item config.example.js config.js
+4. Open index.html in your browser, or run a local server for development. For example, with Python:
+   python -m http.server 8000
+   Then visit http://localhost:8000.
+The portfolio's core static content works without API keys. Valid configuration is needed only for the API-powered local-demo features.
+Current Limitations
+- The site is a static frontend and does not have a backend.
+- Project details and portfolio content must be updated manually in the source files.
+- The weather widget and AI assistant require configuration and are intended for local demonstrations.
+- API keys used in browser-side JavaScript can be exposed to anyone who can access that code. Do not commit config.js or publish real keys; a production deployment should route private API requests through a backend.
+- There is no backend-powered contact form; visitors can use the displayed email link.
